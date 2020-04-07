@@ -1,0 +1,48 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    var opciones =["r","p","s"];
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+
+while(true){
+    var opcionJugador =prompt("What's your choice: Rock(r), paper(p) or scissors(s)?");
+    console.log("user picked " + opcionJugador)
+    var opcionComputadora = opciones[Math.floor( Math.random() * opciones.length)];
+    console.log("computer picked " + opcionComputadora)
+    alert("Computer chose " + opcionComputadora)
+
+
+    if (opcionJugador == opcionComputadora){
+        ties = ties + 1;    
+        alert("It's a match! You've tied " + ties + " times.")
+    }
+    
+   else if( (opcionJugador == "r" && opcionComputadora == "s") || 
+             (opcionJugador == "p" && opcionComputadora == "r") ||
+             (opcionJugador == "s" && opcionComputadora == "p") ||
+             (opcionComputadora == "r" && opcionJugador == "p")||
+             (opcionComputadora == "p" && opcionJugador == "p") ||
+             (opcionComputadora == "s" && opcionJugador == "p")) {
+                wins++;  
+                alert("You've won " + wins + " times!");
+    }
+    else{
+        losses++;  
+        alert("You've lost " + losses + " times!")
+    }
+
+    }
+//piedra gana a tijeras
+//tijeras gana a papel
+//papel gana a piedra
+//si eligen lo mismo, es un empate
+
+    </script>
+</body>
+</html>
